@@ -119,3 +119,9 @@
     flex-direction: column;
   }
 }
+.myStyle {
+  display :flex;
+  width : 10px;
+} 
+
+
