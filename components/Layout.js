@@ -17,17 +17,25 @@ const Layout = ({ children }) => {
 
 
 
-        <Box>
+        <Box sx={{
 
+        }}>
             <Navbar />
 
 
+            <Container>
+                <Box sx={{
 
 
-            <div>
-                {children}
-            </div>
+                    ml: '100px',
+                    mt: '100px'
+                }}>
 
+                    <div>
+                        {children}
+                    </div>
+                </Box>
+            </Container>
 
         </Box>
 

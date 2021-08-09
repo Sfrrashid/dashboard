@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <h>Hello i am contact</h>
+        <h>Hello  this is demo list </h>
     );
 
 }

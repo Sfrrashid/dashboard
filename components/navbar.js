@@ -10,16 +10,18 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { Box } from '@material-ui/core';
-import { purple } from '@material-ui/core/colors';
+import { blue, purple, red } from '@material-ui/core/colors';
 import SearchAppBar from './Appbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faAddressBook, faAddressCard, faTable, faUserCircle, faFolder, faClipboard } from "@fortawesome/free-solid-svg-icons";
+import { faAddressBook, faAddressCard, faTable, faUserCircle, faFolder, faClipboard, faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 
 
 const drawerWidth = 100;
 const color = purple[800];
-const Font_color = purple[50]
+const Font_color = purple[50];
+const icon_color = blue[300];
+const my_color = red[900];
 
 
 export default function Navbar() {
@@ -67,14 +69,22 @@ export default function Navbar() {
 
                 <Divider />
                 <div>
-                    <List sx={{
-
-                    }}>
-                        <Link href="/contact">
+                    <List>
+                        <Link href="/dashboard">
                             <a>
                                 <ListItem>
-                                    <ListItemIcon>
-                                        <FontAwesomeIcon icon={faHome} size="3x" />
+                                    <ListItemIcon sx={{
+                                        ':hover': {
+                                            color: icon_color,
+
+                                        },
+                                        ":active": {
+                                            color: my_color,
+                                            borderStyle: "2px solid black"
+
+                                        }
+                                    }}>
+                                        <FontAwesomeIcon icon={faChartLine} size="3x" />
 
 
                                     </ListItemIcon>
@@ -82,44 +92,77 @@ export default function Navbar() {
                                 </ListItem>
                             </a>
                         </Link>
-                        <ListItem>
-                            <ListItemIcon>
+                        <Link href="/list">
+                            <a>
+                                <ListItem>
+                                    <ListItemIcon sx={{
+                                        ':hover': {
+                                            color: icon_color
+                                        }
+                                    }}>
 
+                                        <FontAwesomeIcon icon={faTable} size="3x" />
+
+                                    </ListItemIcon>
+
+                                </ListItem>
+                            </a>
+                        </Link>
+                        <ListItem>
+                            <ListItemIcon sx={{
+                                ':hover': {
+                                    color: icon_color
+                                }
+                            }}>
+
+                                <FontAwesomeIcon icon={faAddressCard} size="3x" />
+                            </ListItemIcon>
+
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemIcon sx={{
+                                ':hover': {
+                                    color: icon_color
+                                }
+                            }}>
                                 <FontAwesomeIcon icon={faAddressBook} size="3x" />
 
                             </ListItemIcon>
 
                         </ListItem>
                         <ListItem>
-                            <ListItemIcon>
-
-                                <FontAwesomeIcon icon={faAddressCard} size="3x" />
-                            </ListItemIcon>
-
-                        </ListItem>
-                        <ListItem>
-                            <ListItemIcon>
-                                <FontAwesomeIcon icon={faTable} size="3x" />
-
-                            </ListItemIcon>
-
-                        </ListItem>
-                        <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon sx={{
+                                ':hover': {
+                                    color: icon_color
+                                }
+                            }}>
                                 <FontAwesomeIcon icon={faUserCircle} size="3x" />
 
                             </ListItemIcon>
 
                         </ListItem>
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon sx={{
+                                ':hover': {
+                                    color: icon_color
+                                }
+                            }}>
                                 <FontAwesomeIcon icon={faFolder} size="3x" />
 
                             </ListItemIcon>
 
                         </ListItem>
                         <ListItem>
-                            <ListItemIcon>
+                            <ListItemIcon sx={{
+                                ':hover': {
+                                    color: icon_color,
+
+                                },
+                                ':active': {
+                                    color: color
+                                }
+                            }}>
                                 <FontAwesomeIcon icon={faClipboard} size="3x" />
 
                             </ListItemIcon>
@@ -133,6 +176,7 @@ export default function Navbar() {
 
 
             </Drawer>
+
         </Box>
 
 
