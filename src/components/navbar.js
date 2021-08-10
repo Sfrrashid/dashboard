@@ -1,4 +1,8 @@
 import Link from 'next/link';
+import "../../styles/Home.module.css";
+import { useRouter } from 'next/router'
+
+
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -26,6 +30,14 @@ const my_color = red[900];
 
 export default function Navbar() {
 
+    const router = useRouter();
+    console.log(router);
+    function isActive(route) {
+        if (route == router.pathname) {
+            return "active"
+        }
+        else ""
+    }
 
     return (
         <Box sx={{
@@ -43,7 +55,7 @@ export default function Navbar() {
 
                 '& .MuiDrawer-paper': {
                     background: color,
-                    width: drawerWidth
+
 
 
 
@@ -70,17 +82,20 @@ export default function Navbar() {
                 <Divider />
                 <div>
                     <List>
+
                         <Link href="/dashboard">
                             <a>
-                                <ListItem>
+                                <ListItem className={isActive('/dashboard')} sx={{
+                                    ":active": {
+                                        border: "1px solid black",
+
+                                        backgroundColor: "transparent"
+                                    }
+                                }}>
+
                                     <ListItemIcon sx={{
                                         ':hover': {
                                             color: icon_color,
-
-                                        },
-                                        ":active": {
-                                            color: my_color,
-                                            borderStyle: "2px solid black"
 
                                         }
                                     }}>
@@ -92,11 +107,18 @@ export default function Navbar() {
                                 </ListItem>
                             </a>
                         </Link>
+
                         <Link href="/list">
                             <a>
-                                <ListItem>
+                                <ListItem className={isActive('/list')} sx={{
+                                    ":active": {
+                                        border: "1px solid black",
+
+                                        backgroundColor: "transparent"
+                                    }
+                                }}>
                                     <ListItemIcon sx={{
-                                        ':hover': {
+                                        ":hover": {
                                             color: icon_color
                                         }
                                     }}>
@@ -177,7 +199,7 @@ export default function Navbar() {
 
             </Drawer>
 
-        </Box>
+        </Box >
 
 
     );

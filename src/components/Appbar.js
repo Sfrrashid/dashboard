@@ -6,6 +6,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -64,14 +66,8 @@ export default function SearchAppBar() {
                     >
 
                     </IconButton>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        Material-UI
-                    </Typography>
+                    <FontAwesomeIcon icon={faBars} size="2x" />
+
                     <Search>
 
                         <StyledInputBase

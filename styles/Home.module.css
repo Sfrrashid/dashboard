@@ -119,6 +119,13 @@
     flex-direction: column;
   }
 }
+ .MyClass {
+  background-color:brown;
+  border: 1px solid black;
+
+  
+}
+
 
 
 
